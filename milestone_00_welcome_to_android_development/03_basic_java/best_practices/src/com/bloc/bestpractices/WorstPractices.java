@@ -9,11 +9,11 @@ public class WorstPractices extends Object {
 // EDIT BELOW
 
 	public static void main(String [] args) {
-		int magic_number = WorstPractices.animals(false);
-		magic_number *= 5;
-		if (magic_number > 18){
-			while(magic_number > 0){
-				magic_number--;
+		int magicNumber = WorstPractices.animals(false);
+		magicNumber *= 5;
+		if (magicNumber > 18){
+			while(magicNumber > 0){
+				magicNumber--;
 			}
 		}
 	}
@@ -26,14 +26,14 @@ public class WorstPractices extends Object {
 		/*
 			Start off with one of these
 		*/
-		int Random = seed ? 34 : 21;
-		float SparklesFairy = .5f;
+		int random = seed ? 34 : 21;
+		float sparklesFairy = .5f;
 	
-		for (int brown = 0; brown < Random; brown++){
-			SparklesGairy *= Random;
+		for (int brown = 0; brown < random; brown++){
+			sparklesFairy *= random;
 		} 
 
-	return (int) SparklesFairy * Random;
+	return (int) sparklesFairy * random;
 }
 
 // STOP EDITING
