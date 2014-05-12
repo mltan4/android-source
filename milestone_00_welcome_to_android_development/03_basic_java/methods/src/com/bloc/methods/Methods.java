@@ -24,7 +24,7 @@ public class Methods extends Object {
 		 * ASSIGNMENT:
 		 * Return the logical opposite of the passed parameter 'original'
 		 */
-		return false;
+		return !original;
 	}
 
 	public void flipTheSign(int[] numbers) {
@@ -33,6 +33,9 @@ public class Methods extends Object {
 		 * For all the integers in the array, reverse their sign:
 		 * e.g. {1, 54, -12} becomes {-1, -54, 12}
 		 */
+		for (int i=0; i<(int)numbers.length; i++){
+			numbers[i]=numbers[i]*(-1);
+		}
 	}
 
 	public boolean[] boolsRule(int floor, int[] someNumbers) {
@@ -43,7 +46,14 @@ public class Methods extends Object {
 		 * array is at least 'floor' e.g.
 		 * {0, 5, 18, 2} with a floor of 6 returns {false, false, true, false}
 		 */
-		return new boolean [0];
+
+		for (int i=0; i<(int)someNumbers.length; i++){
+			if(someNumbers[i]<floor)
+				boolean[i] = false;
+			else
+				boolean[i] = true;		
+		}
+		return new boolean[0];
 	}
 
 	public int[] getMinAndMax(int[] someNumbers) {
@@ -54,6 +64,15 @@ public class Methods extends Object {
 		 * be the largest e.g.
 		 * {3, 6, 202, 2, 9986, 5} returns {2, 9986}
 		 */
+		for (int i=0; i<(int)someNumbers.length; i++){
+			int min = someNumbers[i];
+			int max = someNumbers[i]; 
+			if (someNumbers[i+1]<someNumbers[i])
+				min = someNumbers[i+1];
+			if (someNumbers[i+1]>someNumbers[i])
+				max = someNumbers[i+1];
+		}
+
 		return new int[2];
 	}
 }

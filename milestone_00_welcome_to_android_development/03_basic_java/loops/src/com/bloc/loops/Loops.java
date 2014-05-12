@@ -16,7 +16,7 @@ public class Loops extends Object {
 		int i = 7;
 		int j = 0;
 
-		while(i>=4){
+		while(i>=(((int)someBools.length)/2)){
 			temp = someBools[i];
 			someBools[i] = someBools[j];
 			someBools[j] = temp;
@@ -25,7 +25,7 @@ public class Loops extends Object {
 		}
 
 		if (Test.testBools(someBools)) {
-			System.out.print("Your booleans are in proper order!\n");
+			System.out.print("Your booleans are in proper order! :)\n");
 		} else {
 			System.out.print("Something in the while loop…\n");
 			System.exit(0);
