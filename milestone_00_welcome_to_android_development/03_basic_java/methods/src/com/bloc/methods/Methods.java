@@ -47,13 +47,15 @@ public class Methods extends Object {
 		 * {0, 5, 18, 2} with a floor of 6 returns {false, false, true, false}
 		 */
 
+		int[] myBoolean = new int[(int)someNumbers.length];
+
 		for (int i=0; i<(int)someNumbers.length; i++){
 			if(someNumbers[i]<floor)
-				boolean[i] = false;
+				myBoolean[i] = 0;
 			else
-				boolean[i] = true;		
+				myBoolean[i] = 1;		
 		}
-		return new boolean[0];
+		return boolean[i]==0;
 	}
 
 	public int[] getMinAndMax(int[] someNumbers) {
