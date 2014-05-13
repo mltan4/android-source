@@ -1,8 +1,8 @@
 package com.bloc.classes;
 
-class Dog {
+public class Dog { //Clarify: When to declare public/private
     // The length of hair which
-    final float HAIR_CUT_LENGTH = 0.15f
+    final float HAIR_CUT_LENGTH = 0.15f;
     // Minimum weight that any Dog can be
     final float MIN_WEIGHT = 1.25f;
 	// Amount of weight to gain after eating
@@ -21,7 +21,10 @@ class Dog {
 	float mWeight;
 	// The color of its coat
 	String mColor;
-
+	// The number of times the dog eats;
+	int mMeals = 0;
+	// ADD MEMBER VARIABLES HERE IF NECESSARY
+	int mPlays = 0;
 	// ADD MEMBER VARIABLES HERE IF NECESSARY
 
 	/*
@@ -29,6 +32,10 @@ class Dog {
 	 * @return this Dog's hair length
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
+
+	public float getHairLength(int mHairLength){
+		return mHairLength;
+	}
 
 	/*
 	 * setHairLength
@@ -38,12 +45,20 @@ class Dog {
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
+	public void setHairLength(int mHairlength){
+	 	float hairLength;
+	 	hairLength = mHairLength;
+	}
+	//Clarify: private float haiLength does not work
+
 	/*
 	 * getGender
 	 * @return this Dog's gender
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
-
+	public String getGender(String mGender){
+		return mGender;
+	}
 	/*
 	 * setGender
 	 * Sets this Dog's gender
@@ -51,6 +66,10 @@ class Dog {
 	 * @return nothing
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
+	public void setGender(String mGender){
+		String gender;
+		gender = mGender;
+	}
 
 	/*
 	 * getSize
@@ -58,6 +77,9 @@ class Dog {
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
+	public String getSize(String mSize){
+		return mSize;
+	}
 	/*
 	 * setSize
 	 * Sets the size of the Dog
@@ -65,12 +87,19 @@ class Dog {
 	 * @return nothing
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
-
+	public void setSize(String mSize){
+		String size;
+		size = mSize;
+	}
 	/*
 	 * getAge
 	 * @return this Dog's age
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
+
+	public int getAge(int mAge){
+		return mAge;
+	}
 
 	/*
 	 * setAge
@@ -80,11 +109,20 @@ class Dog {
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
+	public void setAge(int mAge){
+		int age;
+		age = mAge;
+	}
+
 	/*
 	 * getWeight
 	 * @return this Dog's weight
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
+
+	public float getWeight(float mWeight){
+		return mWeight;
+	}
 
 	/*
 	 * setWeight
@@ -94,12 +132,19 @@ class Dog {
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
+	public void setWeight(float mWeight){
+		float weight;
+		weight = mWeight;
+	}
 	/*
 	 * getColor
 	 * @return this Dog's color
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
+	public String getColor(String mColor){
+		return mColor;
+	}
 	/*
 	 * setColor
 	 * Sets the color of the Dog
@@ -107,6 +152,11 @@ class Dog {
 	 * @return nothing
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
+
+	public void setColor(String mColor){
+		String color;
+		color = mColor;
+	}
 
 	/*
 	 * feed
@@ -117,6 +167,20 @@ class Dog {
 	 * @return nothing
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
+	public void feed(String mSize, int mMeals){
+
+		if(mMeals<0)
+			"tiny".equals(mSize);
+		else if(mMeals<3)
+			"small".equals(mSize);
+		else if(mMeals<6)
+			"medium".equals(mSize);
+		else
+			"large".equals(mSize);
+		mMeals++;
+		mWeight = mWeight + WEIGHT_GAIN;
+	}
+	//Check: Is it necessary to pass MIN_WEIGHT
 
 	/*
 	 * play
@@ -127,7 +191,19 @@ class Dog {
 	 * @return nothing
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
+	public void play(String mSize, int mPlays){
 
+		if(mPlays<0)
+			"large".equals(mSize);
+		else if(mPlays<6)
+			"average".equals(mSize);
+		else if(mPlays<12)
+			"small".equals(mSize);
+		else
+			"tiny".equals(mSize);
+		mPlays++;
+		mWeight = mWeight - WEIGHT_LOSS;
+	}
 	/*
 	 * cutHair
 	 * Side-effect: the Dog's hair length is reduced by HAIR_CUT_LENGTH
@@ -135,5 +211,9 @@ class Dog {
 	 * @return nothing
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
+	public void cutHair(float mHairLength){
 
+		if(mHairLength-HAIR_CUT_LENGTH>0f)
+			mHairLength -= HAIR_CUT_LENGTH;
+	}
 }
