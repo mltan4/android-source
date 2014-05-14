@@ -14,7 +14,7 @@ public class Dog { //Clarify: When to declare public/private
 	// Gender, either "male" or "female"
 	String mGender;
 	// Size, either "tiny", "small", "average", or "large"
-	String mSize;
+	String mSize; // feed and play both refer to this, can't just pass this to each==
 	// Its age
 	int mAge;
 	// Its weight in pounds
@@ -33,7 +33,14 @@ public class Dog { //Clarify: When to declare public/private
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
-	public float getHairLength(int mHairLength){
+
+	// Clarify: Why should you not include public/private?
+	// Note to self: This code block doesn't make sense
+	// public float getHairLength(int mHairLength){
+	// 	return mHairLength;
+	// }
+
+	float getHairLength() {
 		return mHairLength;
 	}
 
@@ -45,18 +52,24 @@ public class Dog { //Clarify: When to declare public/private
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
-	public void setHairLength(int mHairlength){
-	 	float hairLength;
-	 	hairLength = mHairLength;
+	// Clarify: private float haiLength does not work
+	// Note to self: This one below doesn't make sense
+	// @param should be passed vs. mHairlength
+	// this param should be assigned to mHairlength, not the other way around
+	// void setHairLength(int mHairlength){
+	//  	float hairLength;
+	//  	hairLength = mHairLength;
+	// }
+	void setHairLength(float hairLength){
+		mHairLength = hairLength;
 	}
-	//Clarify: private float haiLength does not work
 
 	/*
 	 * getGender
 	 * @return this Dog's gender
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
-	public String getGender(String mGender){
+	String getGender(){
 		return mGender;
 	}
 	/*
@@ -66,9 +79,8 @@ public class Dog { //Clarify: When to declare public/private
 	 * @return nothing
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
-	public void setGender(String mGender){
-		String gender;
-		gender = mGender;
+	void setGender(String gender){
+		mGender = gender;
 	}
 
 	/*
@@ -77,7 +89,7 @@ public class Dog { //Clarify: When to declare public/private
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
-	public String getSize(String mSize){
+	String getSize(){
 		return mSize;
 	}
 	/*
@@ -87,9 +99,8 @@ public class Dog { //Clarify: When to declare public/private
 	 * @return nothing
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
-	public void setSize(String mSize){
-		String size;
-		size = mSize;
+	void setSize(String size){
+		mSize = size;
 	}
 	/*
 	 * getAge
@@ -97,7 +108,7 @@ public class Dog { //Clarify: When to declare public/private
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
-	public int getAge(int mAge){
+	int getAge(){
 		return mAge;
 	}
 
@@ -109,9 +120,8 @@ public class Dog { //Clarify: When to declare public/private
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
-	public void setAge(int mAge){
-		int age;
-		age = mAge;
+	void setAge(int age){
+		mAge = age;
 	}
 
 	/*
@@ -120,7 +130,7 @@ public class Dog { //Clarify: When to declare public/private
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
-	public float getWeight(float mWeight){
+	float getWeight(){
 		return mWeight;
 	}
 
@@ -132,9 +142,8 @@ public class Dog { //Clarify: When to declare public/private
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
-	public void setWeight(float mWeight){
-		float weight;
-		weight = mWeight;
+	void setWeight(float weight){
+		mWeight = weight;
 	}
 	/*
 	 * getColor
@@ -142,7 +151,7 @@ public class Dog { //Clarify: When to declare public/private
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
-	public String getColor(String mColor){
+	String getColor(){
 		return mColor;
 	}
 	/*
@@ -153,9 +162,8 @@ public class Dog { //Clarify: When to declare public/private
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
 
-	public void setColor(String mColor){
-		String color;
-		color = mColor;
+	void setColor(String color){
+		mColor = color;
 	}
 
 	/*
@@ -167,19 +175,23 @@ public class Dog { //Clarify: When to declare public/private
 	 * @return nothing
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
-	public void feed(String mSize, int mMeals){
-
-		if(mMeals<0)
-			"tiny".equals(mSize);
-		else if(mMeals<3)
-			"small".equals(mSize);
-		else if(mMeals<6)
-			"medium".equals(mSize);
-		else
-			"large".equals(mSize);
+	void feed(){
+		mWeight += WEIGHT_GAIN;
 		mMeals++;
-		mWeight = mWeight + WEIGHT_GAIN;
+		
+		if (mMeals == 3){
+			switch(mSize){
+			case "tiny": 
+				mSize = "small";
+			case "small":
+				mSize = "average";
+			default:
+				mSize = "large";
+			}
+		mMeals = 0;
+		}	
 	}
+
 	//Check: Is it necessary to pass MIN_WEIGHT
 
 	/*
@@ -191,18 +203,21 @@ public class Dog { //Clarify: When to declare public/private
 	 * @return nothing
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
-	public void play(String mSize, int mPlays){
-
-		if(mPlays<0)
-			"large".equals(mSize);
-		else if(mPlays<6)
-			"average".equals(mSize);
-		else if(mPlays<12)
-			"small".equals(mSize);
-		else
-			"tiny".equals(mSize);
-		mPlays++;
+	void play(){
 		mWeight = mWeight - WEIGHT_LOSS;
+		mPlays++;
+
+		if (mPlays == 6){
+			switch(mSize){
+			case "large": 
+				mSize = "average";
+			case "average":
+				mSize = "small";
+			default:
+				mSize = "tiny";
+			}
+		mPlays = 0;
+		}
 	}
 	/*
 	 * cutHair
@@ -211,7 +226,7 @@ public class Dog { //Clarify: When to declare public/private
 	 * @return nothing
 	 */
 	// ADD YOUR METHOD HERE, NAME MUST MATCH DESCRIPTION
-	public void cutHair(float mHairLength){
+	public void cutHair(){
 
 		if(mHairLength-HAIR_CUT_LENGTH>0f)
 			mHairLength -= HAIR_CUT_LENGTH;
