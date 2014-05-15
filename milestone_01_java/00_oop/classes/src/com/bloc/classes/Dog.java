@@ -183,8 +183,10 @@ public class Dog { //Clarify: When to declare public/private
 			switch(mSize){
 			case "tiny": 
 				mSize = "small";
+				break;				
 			case "small":
 				mSize = "average";
+				break;
 			default:
 				mSize = "large";
 			}
@@ -211,10 +213,13 @@ public class Dog { //Clarify: When to declare public/private
 			switch(mSize){
 			case "large": 
 				mSize = "average";
+				break;
 			case "average":
 				mSize = "small";
+				break;
 			default:
 				mSize = "tiny";
+				break;
 			}
 		mPlays = 0;
 		}

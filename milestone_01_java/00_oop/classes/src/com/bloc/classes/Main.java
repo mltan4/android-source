@@ -41,12 +41,12 @@ public class Main extends Object {
 				System.out.println("Your Dog should have gained some weight");
 				System.exit(1);
 			}
-			// feed.invoke(dog, new Object[0]);
-			// feed.invoke(dog, new Object[0]);
-			// if (!"average".equals(getSize.invoke(dog, new Object[0]))) {
-			// 	System.out.println("Your Dog didn't grow to average after 3 meals :(");
-			// 	System.exit(1);		
-			// }
+			feed.invoke(dog, new Object[0]);
+			feed.invoke(dog, new Object[0]);
+			if (!"average".equals(getSize.invoke(dog, new Object[0]))) {
+				System.out.println("Your Dog didn't grow to average after 3 meals :(");
+				System.exit(1);		
+			}
 			feed.invoke(dog, new Object[0]);
 			feed.invoke(dog, new Object[0]);
 			feed.invoke(dog, new Object[0]);
@@ -86,20 +86,20 @@ public class Main extends Object {
 				System.exit(1);		
 			}
 
-			// play.invoke(dog, new Object[0]);
-			// if (!"average".equals(getSize.invoke(dog, new Object[0]))) {
-			// 	System.out.println("Your Dog should have shrank by now");
-			// 	System.exit(1);		
-			// }
+			play.invoke(dog, new Object[0]);
+			if (!"average".equals(getSize.invoke(dog, new Object[0]))) {
+				System.out.println("Your Dog should have shrank by now");
+				System.exit(1);		
+			}
 
 			for (int i = 0; i < 6; i++) {
 				play.invoke(dog, new Object[0]);
 			}
 
-			// if (!"small".equals(getSize.invoke(dog, new Object[0]))) {
-			// 	System.out.println("Your Dog should have shrank by now");
-			// 	System.exit(1);		
-			// }
+			if (!"small".equals(getSize.invoke(dog, new Object[0]))) {
+				System.out.println("Your Dog should have shrank by now");
+				System.exit(1);		
+			}
 
 			for (int i = 0; i < 6; i++) {
 				play.invoke(dog, new Object[0]);

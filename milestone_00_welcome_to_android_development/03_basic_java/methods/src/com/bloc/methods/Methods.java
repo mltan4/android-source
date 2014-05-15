@@ -39,23 +39,21 @@ public class Methods extends Object {
 	}
 
 	public boolean[] boolsRule(int floor, int[] someNumbers) {
-		/*
-		 * ASSIGNMENT:
-		 * This method returns an array of booleans of length someNumbers.length
-		 * Each boolean represents whether that corresponding entry in the integer
-		 * array is at least 'floor' e.g.
-		 * {0, 5, 18, 2} with a floor of 6 returns {false, false, true, false}
-		 */
+		
+		 // * ASSIGNMENT:
+		 // * This method returns an array of booleans of length someNumbers.length
+		 // * Each boolean represents whether that corresponding entry in the integer
+		 // * array is at least 'floor' e.g.
+		 // * {0, 5, 18, 2} with a floor of 6 returns {false, false, true, false}
+		boolean[] myboolean = new boolean[someNumbers.length];
 
-		int[] myBoolean = new int[(int)someNumbers.length];
-
-		for (int i=0; i<(int)someNumbers.length; i++){
-			if(someNumbers[i]<floor)
-				myBoolean[i] = 0;
-			else
-				myBoolean[i] = 1;		
-		}
-		return boolean[i]==0;
+        for (int i=0; i<(int)someNumbers.length; i++){
+            if(someNumbers[i]<floor)
+                myboolean[i] = false;
+            else
+                myboolean[i] = true;        
+        }
+        return myboolean;
 	}
 
 	public int[] getMinAndMax(int[] someNumbers) {
@@ -66,15 +64,18 @@ public class Methods extends Object {
 		 * be the largest e.g.
 		 * {3, 6, 202, 2, 9986, 5} returns {2, 9986}
 		 */
+		
+		int min = someNumbers[0];
+		int max = someNumbers[0]; 
+
 		for (int i=0; i<(int)someNumbers.length; i++){
-			int min = someNumbers[i];
-			int max = someNumbers[i]; 
-			if (someNumbers[i+1]<someNumbers[i])
-				min = someNumbers[i+1];
-			if (someNumbers[i+1]>someNumbers[i])
-				max = someNumbers[i+1];
+
+			if (someNumbers[i]<min)
+				min = someNumbers[i];
+			if (someNumbers[i]>max)
+				max = someNumbers[i];
 		}
 
-		return new int[2];
+		return new int[] {min, max};
 	}
 }

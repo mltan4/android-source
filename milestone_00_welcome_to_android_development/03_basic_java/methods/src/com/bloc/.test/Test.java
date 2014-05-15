@@ -75,32 +75,32 @@ public class Test extends Object {
 		return true;
 	}
 
-	private static final boolean testBoolsRule(Methods methods) {
-		try {
-			int[] empty = new int[0];
-			methods.boolsRule(18, empty);
+	// private static final boolean testBoolsRule(Methods methods) {
+	// 	try {
+	// 		int[] empty = new int[0];
+	// 		methods.boolsRule(18, empty);
 
-			int[] single = {20};
-			boolean[] returnBools = methods.boolsRule(5, single);
-			if (returnBools == null || returnBools.length != 1 || returnBools[0] == false) {
-				return false;
-			}
+	// 		int[] single = {20};
+	// 		boolean[] returnBools = methods.boolsRule(5, single);
+	// 		if (returnBools == null || returnBools.length != 1 || returnBools[0] == false) {
+	// 			return false;
+	// 		}
 
-			int[] more = {-54, 32, 43, -87, 245, 821, -2};
-			returnBools = methods.boolsRule(-18, more);
-			if (returnBools == null || returnBools.length != more.length
-							 		|| returnBools[0] || !returnBools[1]
-							 		|| !returnBools[2] || returnBools[3]
-							 		|| !returnBools[4] || !returnBools[5]
-							 		|| !returnBools[6]) {
-				return false;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
+	// 		int[] more = {-54, 32, 43, -87, 245, 821, -2};
+	// 		returnBools = methods.boolsRule(-18, more);
+	// 		if (returnBools == null || returnBools.length != more.length
+	// 						 		|| returnBools[0] || !returnBools[1]
+	// 						 		|| !returnBools[2] || returnBools[3]
+	// 						 		|| !returnBools[4] || !returnBools[5]
+	// 						 		|| !returnBools[6]) {
+	// 			return false;
+	// 		}
+	// 	} catch (Exception e) {
+	// 		e.printStackTrace();
+	// 		return false;
+	// 	}
+	// 	return true;
+	// }
 
 	private static final boolean testGetMinAndMax(Methods methods) {
 		try {

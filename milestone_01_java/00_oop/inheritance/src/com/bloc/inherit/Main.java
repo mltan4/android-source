@@ -22,12 +22,12 @@ public class Main extends Object {
 			chihuahua.feed(); // Second
 			chihuahua.feed(); // Third
 			if (chihuahua.getSizeIndex() != 0) {
-				System.out.println("Your chihuahua grew too early");
+				System.out.println("Your chihuahua grew too early 1");
 				System.exit(1);
 			}
 			chihuahua.feed(); // Fourth
 			if (chihuahua.getSizeIndex() != 0) {
-				System.out.println("Your chihuahua grew too early");
+				System.out.println("Your chihuahua grew too early 2");
 				System.exit(1);
 			}
 			chihuahua.feed(); // Fifth
