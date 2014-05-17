@@ -14,6 +14,11 @@ class Song extends Object {
 	 *				 and year of your choosing
 	 */
 	// CONSTRUCTOR CODE GOES HERE
+	Song(){
+		mEnsemble = null;
+		mTitle = "Thriller";
+		mYearReleased = 2000;
+	}
 
 	/*
 	 * Partial Constructor
@@ -22,6 +27,11 @@ class Song extends Object {
 	 * @param title the song title
 	 */
 	// CONSTRUCTOR CODE GOES HERE
+	Song(Ensemble ensemble, String title){
+		mEnsemble = ensemble;
+		mTitle = title;
+		mYearReleased = 0;
+	}
 
 	/*
 	 * Full Constructor
@@ -30,4 +40,10 @@ class Song extends Object {
 	 * @param yearReleased the year the song was released
 	 */
 	// CONSTRUCTOR CODE GOES HERE
+	Song(Ensemble ensemble, String title, int yearReleased){
+		mEnsemble = ensemble;
+		mTitle = title;
+		mYearReleased = yearReleased; 
+	}
+
 }

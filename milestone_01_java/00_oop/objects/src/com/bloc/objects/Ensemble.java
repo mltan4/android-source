@@ -13,7 +13,10 @@ class Ensemble extends Object {
 	 * @param artists variable length artists
 	 */
 	// CONSTRUCTOR CODE GOES HERE
-
+	Ensemble(Artist[] artists) {
+		this(null, artists);
+	}
+		
 	/*
 	 * Second Constructor
 	 * This constructor takes a name and a variable length of Artist objects
@@ -24,4 +27,11 @@ class Ensemble extends Object {
 	 * @param artists variable length artists
 	 */
 	// CONSTRUCTOR CODE GOES HERE
+	Ensemble(String name, Artist[] artists) {
+		if (name == null)
+			name = artists[0].mFirstName + artists[0].mLastName;
+		this.mName = name;
+		this.mArtists  = artists;
+	}
+		
 }
