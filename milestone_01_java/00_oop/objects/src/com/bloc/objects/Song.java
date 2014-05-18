@@ -15,7 +15,7 @@ class Song extends Object {
 	 */
 	// CONSTRUCTOR CODE GOES HERE
 	Song(){
-		mEnsemble = null;
+		mEnsemble = new Ensemble("Pop",new Artist[]{new Artist("Michael","Jackson")});
 		mTitle = "Thriller";
 		mYearReleased = 2000;
 	}
