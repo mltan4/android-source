@@ -3,11 +3,11 @@ package com.bloc.statics.appliances;
 import com.bloc.statics.PowerSupply;
 
 public abstract class Appliance extends Object {
-	static PowerSupply mPowerSupply;
-
+	
+	PowerSupply mPowerSupply;
 	String mBrandName;
 	String mSerialNumber;
-	static boolean mIsOn;
+	boolean mIsOn;
 
 	/*
 	 * performFunction
@@ -35,7 +35,7 @@ public abstract class Appliance extends Object {
 	 * Flips the power switch on the appliance. Off becomes
 	 * on, on becomes off
 	 */
-	public static void flipPowerSwitch() {
+	public void flipPowerSwitch() {
 		mIsOn = !mIsOn;
 	}
 
@@ -44,7 +44,11 @@ public abstract class Appliance extends Object {
 	 * @return true if the power switch is flipped on and the appliance
 	 * 		   is plugged in
 	 */
-	public static boolean isOn() {
+	
+	// Note that this doesn't work because this refers to an instance of the class that defines isOn.
+	// Since isOn is static, it cannot use a reference this, as this is not guaranteed to be initialized. 
+
+	public boolean isOn() {
 		return mIsOn && mPowerSupply != null && mPowerSupply.hasAppliance(this);
 	}
 
@@ -52,7 +56,7 @@ public abstract class Appliance extends Object {
 	 * plugIn
 	 * Plug the appliance into the power supply
 	 */
-	public static void plugIn() {
+	public void plugIn() {
 		if (mPowerSupply == null) {
 			mPowerSupply = new PowerSupply();
 		}
