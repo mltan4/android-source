@@ -3,11 +3,11 @@ package com.bloc.statics.appliances;
 import com.bloc.statics.PowerSupply;
 
 public abstract class Appliance extends Object {
-	PowerSupply mPowerSupply;
+	static PowerSupply mPowerSupply;
 
 	String mBrandName;
 	String mSerialNumber;
-	boolean mIsOn;
+	static boolean mIsOn;
 
 	/*
 	 * performFunction
@@ -35,7 +35,7 @@ public abstract class Appliance extends Object {
 	 * Flips the power switch on the appliance. Off becomes
 	 * on, on becomes off
 	 */
-	public void flipPowerSwitch() {
+	public static void flipPowerSwitch() {
 		mIsOn = !mIsOn;
 	}
 
@@ -44,7 +44,7 @@ public abstract class Appliance extends Object {
 	 * @return true if the power switch is flipped on and the appliance
 	 * 		   is plugged in
 	 */
-	public boolean isOn() {
+	public static boolean isOn() {
 		return mIsOn && mPowerSupply != null && mPowerSupply.hasAppliance(this);
 	}
 
@@ -52,7 +52,7 @@ public abstract class Appliance extends Object {
 	 * plugIn
 	 * Plug the appliance into the power supply
 	 */
-	public void plugIn() {
+	public static void plugIn() {
 		if (mPowerSupply == null) {
 			mPowerSupply = new PowerSupply();
 		}
