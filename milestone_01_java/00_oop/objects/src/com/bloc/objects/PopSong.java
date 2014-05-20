@@ -27,6 +27,7 @@ class PopSong extends Song {
 		mEnsemble = ensemble;
 		mTitle = title;
 		mYearReleased = 0;
+		mWeeksOnBillboard = 0;
 	}
 
 	/*
@@ -41,6 +42,7 @@ class PopSong extends Song {
 		mEnsemble = ensemble;
 		mTitle = title;
 		mYearReleased = yearReleased;
+		mWeeksOnBillboard = 0;
 	}
 	
 	/*
