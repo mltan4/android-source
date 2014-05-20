@@ -5,17 +5,6 @@ public class Mary extends Person {
 		super("Mary", "Whiters", "Female", 1.65d, 62d, "Blue");
 	}
 
-	public void getInCar() {
-
-	}
-
-	public void startEngine() {
-
-	}
-
-	public void driveFast() {
-
-	}
 
 	public void getInPlane() {
 
@@ -29,16 +18,5 @@ public class Mary extends Person {
 
 	}
 
-	public void putOnShoes() {
-
-	}
-
-	public void findAPartner() {
-
-	}
-
-	public void salsa() {
-		
-	}
 
 }

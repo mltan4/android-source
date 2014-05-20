@@ -81,22 +81,5 @@ public abstract class Person extends Object {
 	 * Abstract void
 	 methods
 	 */
-
-	public abstract void getInCar();
-
-	public abstract void startEngine();
-
-	public abstract void driveFast();
-
-	public abstract void getInPlane();
-
-	public abstract void jumpFromPlane();
-
-	public abstract void releaseParachute();
-
-	public abstract void putOnShoes();
-
-	public abstract void findAPartner();
-
-	public abstract void salsa();
+	
 }

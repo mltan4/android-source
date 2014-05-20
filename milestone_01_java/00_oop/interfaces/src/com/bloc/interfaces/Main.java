@@ -1,7 +1,7 @@
 package com.bloc.interfaces;
 
 import com.bloc.interfaces.people.*;
-import com.bloc.interfaces.people.hobbies.*;
+//Clarify: doesn't calling the methods retained inside John, Mary, Albert make the hobbies interface useless?
 
 public class Main extends Object {
 

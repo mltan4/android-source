@@ -16,29 +16,5 @@ public class John extends Person {
 	public void driveFast() {
 
 	}
-
-	public void getInPlane() {
-
-	}
-
-	public void jumpFromPlane() {
-
-	}
-
-	public void releaseParachute() {
-
-	}
-
-	public void putOnShoes() {
-
-	}
-
-	public void findAPartner() {
-
-	}
-
-	public void salsa() {
-		
-	}
-
+	
 }
