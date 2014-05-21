@@ -6,33 +6,43 @@ public class Main extends Object {
 
 	public static void main(String [] args) {
 
-		Dog dog = new Dog();
+		Dog dog = new Dog(); 
 		Cat cat = new Cat();
 		Bird bird = new Bird();
 		Snake snake = new Snake();
 		Tarantula tarantula = new Tarantula();
+		
+		Pet[] pet = new Pet[] {dog, cat, bird, snake, tarantula};
 
+		// dog is ref variable, Dog is data type, new Dog() is object of type Dog
+		// superclass Pet can be assigned to dog
+		
 		// Accomplish the below using polymorphism
 
-		dog.feed();
-		dog.wash();
-		dog.exercise();
-
-		cat.feed();
-		cat.wash();
-		cat.exercise();
-
-		bird.feed();
-		bird.wash();
-		bird.exercise();
-
-		snake.feed();
-		snake.wash();
-		snake.exercise();
-
-		tarantula.feed();
-		tarantula.wash();
-		tarantula.exercise();
+		for(int x=0; x<5; x++){
+			pet[x].feed();
+			pet[x].wash();
+			pet[x].exercise();
+		}
+//		dog.feed();
+//		dog.wash();
+//		dog.exercise();
+//
+//		cat.feed();
+//		cat.wash();
+//		cat.exercise();
+//
+//		bird.feed();
+//		bird.wash();
+//		bird.exercise();
+//
+//		snake.feed();
+//		snake.wash();
+//		snake.exercise();
+//
+//		tarantula.feed();
+//		tarantula.wash();
+//		tarantula.exercise();
 
 		// Accomplish the above using polymorphism
 
