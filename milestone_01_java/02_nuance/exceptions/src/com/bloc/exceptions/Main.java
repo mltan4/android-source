@@ -59,6 +59,6 @@ public class Main extends Object {
 		}
 		catch(Exception e){
 			System.out.println("You can't do that");
-		}		
+		}			
 	}
 }
