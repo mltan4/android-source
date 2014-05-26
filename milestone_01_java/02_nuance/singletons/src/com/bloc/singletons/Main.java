@@ -18,12 +18,12 @@ public class Main extends Object {
 		Talker petOwner = new PetOwner();
 		Talker singer = new Singer();
 		
-		Speakerphone.get().addListener(audienceMember);
-		Speakerphone.get().addListener(child);
-		Speakerphone.get().addListener(pet);
+		Speakerphone.getInstance().addListener(audienceMember);
+		Speakerphone.getInstance().addListener(child);
+		Speakerphone.getInstance().addListener(pet);
 		
-		Speakerphone.get().shoutMessage(parent);
-		Speakerphone.get().shoutMessage(petOwner);
-		Speakerphone.get().shoutMessage(singer);
+		Speakerphone.getInstance().shoutMessage(parent);
+		Speakerphone.getInstance().shoutMessage(petOwner);
+		Speakerphone.getInstance().shoutMessage(singer);
 	}
 }

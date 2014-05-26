@@ -9,26 +9,26 @@ import java.util.*;
 public class Speakerphone extends Object {
 
 	//private instance
-	private static Speakerphone instance; 
-	private List<Listener> listeners;
+	private static Speakerphone instance = new Speakerphone(); // can also declare here 
+	private List<Listener> listeners = new ArrayList<Listener>();
 	
 	// private constructor, only visible to this class
 	private Speakerphone(){ 
 	}
 	
 	//public method to get instance so others can use it
-	public static Speakerphone getInstance(){
-		if(instance == null){ //verify instance if created
-			instance = new Speakerphone();
-		}
-		return instance;
-	}
+//	public static Speakerphone getInstance(){
+//		if(instance == null){ //verify instance if created
+//			instance = new Speakerphone();
+//		}
+//		return instance;
+//	}
 	
 	/*
 	 * get
 	 * @return the singleton instance of Speakerphone
 	 */
-	public static Speakerphone get(){
+	public static Speakerphone getInstance(){
         return instance;
      }
 
