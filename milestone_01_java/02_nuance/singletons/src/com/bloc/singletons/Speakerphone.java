@@ -72,7 +72,15 @@ public class Speakerphone extends Object {
 	 * HINT: see Class.isAssignableFrom()
 	 *		 http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html#isAssignableFrom(java.lang.Class)
 	 */
-
+	public void shoutMessage(Talker talker, Class<?> cls){
+		String message = talker.getMessage();
+		for(Listener listener:listeners)
+			if(cls.isAssignableFrom(listener.getClass()))
+				listener.onMessageReceived(message);
+			else
+				System.out.println("I can't hear yooouuuu");
+	}
+	
 	/*
 	 * removeAll
 	 * Removes all Listeners from Speakerphone
