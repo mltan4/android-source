@@ -1,6 +1,8 @@
 package com.bloc.blocnotes;
 
 import android.app.Fragment;
+import android.os.Bundle;
+import android.widget.RelativeLayout;
 
 /**
  * Created by mark.tan on 5/26/14.
@@ -8,6 +10,11 @@ import android.app.Fragment;
 public class NoteFragment extends Fragment{
     NoteFragment(){
         Fragment f = new Fragment();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 }
 
