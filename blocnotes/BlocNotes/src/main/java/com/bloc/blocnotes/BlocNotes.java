@@ -37,6 +37,13 @@ public class BlocNotes extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bloc_notes);
 
+        NoteFragment fragment = new NoteFragment();
+
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, fragment)
+                .commit();
+
         //Note: Left hand column that contains the list
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
