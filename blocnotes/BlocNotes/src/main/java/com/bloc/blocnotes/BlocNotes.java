@@ -33,7 +33,7 @@ public class BlocNotes extends Activity
     private CharSequence mTitle;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //if null, first time, if not null, recover and put on screen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bloc_notes);
 
