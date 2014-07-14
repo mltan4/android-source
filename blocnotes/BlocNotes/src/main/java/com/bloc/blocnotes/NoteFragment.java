@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.view.View;
+import android.widget.EditText;
 /*import android.widget.RelativeLayout; */
 
 /**
@@ -14,12 +15,40 @@ import android.view.View;
  */
 public class NoteFragment extends Fragment{
 
+    private static final String EDIT_TEXT = "My_Edit_Text";
+    private EditText myEditText;
+    private static final String ARG_SECTION_NUMBER = "section_number";
+
+    public static NoteFragment newInstance(int sectionNumber) {
+        NoteFragment fragment = new NoteFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState){
         View a = inflater.inflate(R.layout.note_fragment, parent, false);
-
         return a;
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(EDIT_TEXT, myEditText.getText().toString());
+    }
+
+    @Override
+    public void onActivityCreated(Bundle outState) {
+        super.onActivityCreated(outState);
+
+        if (outState != null) {
+            String myEdit = outState.getString(EDIT_TEXT); // Data type String (myEdit) is where we store the string EDIT TEXT.
+            myEditText.setText(myEdit);
+        }
+    }
+
 
 }
 
