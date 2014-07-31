@@ -253,12 +253,9 @@ public class NavigationDrawerFragment extends Fragment {
             Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
             return true;
         }
-
-        if (item.getItemId() == R.id.action_erase){
-            Toast.makeText(getActivity(), "Erase notes.", Toast.LENGTH_SHORT).show();
-            return true;
+        if (item.getItemId() == R.id.action_erase) {
+            Toast.makeText(getActivity(), "Erased!", Toast.LENGTH_SHORT).show();
         }
-
         return super.onOptionsItemSelected(item);
     }
 

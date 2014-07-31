@@ -17,7 +17,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
+import android.widget.Button;
 
 public class BlocNotes extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -32,17 +32,24 @@ public class BlocNotes extends Activity
      */
     private CharSequence mTitle;
 
+    Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) { //if null, first time, if not null, recover and put on screen
         super.onCreate(savedInstanceState);
+
+        button = (Button) findViewById(R.id.eraseButton);
+
         setContentView(R.layout.activity_bloc_notes);
 
-        NoteFragment fragment = new NoteFragment();
+        if (savedInstanceState == null){
+            NoteFragment fragment = new NoteFragment();
 
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit();
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, fragment)
+                    .commit();
+        }
 
         //Note: Left hand column that contains the list
         mNavigationDrawerFragment = (NavigationDrawerFragment)

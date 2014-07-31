@@ -9,6 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <Button
+        android:id="@+id/eraseButton"
+        android:layout_height="wrap_content"
+        android:layout_width="10px"
+        android:text="Button"/>
 
     <!--<TextView-->
         <!--android:id="@+id/section_label"-->

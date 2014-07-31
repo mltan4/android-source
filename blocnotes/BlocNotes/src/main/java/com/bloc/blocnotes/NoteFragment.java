@@ -30,6 +30,7 @@ public class NoteFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState){
         View a = inflater.inflate(R.layout.note_fragment, parent, false);
+        myEditText = (EditText) a.findViewById(R.id.editText);
         return a;
     }
 
